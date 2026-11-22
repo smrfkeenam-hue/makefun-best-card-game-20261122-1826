@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Duel — a card battler in four elements</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div id="turn-label">Ember Duel</div>
+    <button id="end-turn" type="button">End turn (Space)</button>
+  </header>
+
+  <section id="enemy-row" aria-label="Cinder's side"></section>
+  <section id="middle" aria-label="Played card and duel log"></section>
+  <section id="player-row" aria-label="Your side"></section>
+  <section id="hand" aria-label="Your hand"></section>
+
+  <div id="title-screen" class="overlay">
+    <div class="panel">
+      <h1>EMBER DUEL</h1>
+      <p class="tagline">Four elements. One table. Cinder, the Ash Warden, waits.</p>
+      <p>Play ember-cost cards against Cinder. You start at 30 life, Cinder
+      at 34 — you move first each round, and the extra life balances that.
+      Each turn you gain 3 ember and draw a card.</p>
+      <p><strong>Resonance:</strong> play a second card of the same element in
+      one turn and it hits +2. From turn 10 the table itself burns — both
+      sides take damage every turn, so no duel drags on.</p>
+      <p>Click a card or press 1–7 to play it. Space ends your turn.
+      Enter starts. R replays after a duel ends.</p>
+      <button id="start-btn" type="button">Begin the duel (Enter)</button>
+      <button id="rules-btn" type="button">Cards</button>
+      <div id="rules" class="hidden">
+        <p><b>Flame</b> — pure damage, some burn. <b>Frost</b> — damage plus shield.
+        <b>Gale</b> — damage plus draw or ember. <b>Stone</b> — damage plus heavy shield.</p>
+        <p>Your deck holds 24 cards: two copies of each 1- and 2-cost card,
+        one of each 3- and 4-cost card, in every element.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="win-screen" class="overlay hidden">
+    <div class="panel">
+      <h2>Victory — Cinder falls!</h2>
+      <p>The Ash Warden's embers scatter across the table. The duel is yours.</p>
+      <button id="win-again" type="button">Duel again (R)</button>
+    </div>
+  </div>
+
+  <div id="loss-screen" class="overlay hidden">
+    <div class="panel">
+      <h2>Defeat — Cinder stands</h2>
+      <p>The table goes dark. Shuffle up and try a new hand.</p>
+      <button id="loss-again" type="button">Duel again (R)</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
